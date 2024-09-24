@@ -121,7 +121,7 @@ Finally displayed the edited or filtered image using:
 
 
  
-### Creating a Branch
+# Creating a Branch
 A branch in GitHub is essentially a copy of your project's code<br> where you can make changes without affecting the main (or primary) codebase.
 #### Steps to Create a Branch:
 ##### 1. Clone the repository:
@@ -136,7 +136,7 @@ A branch in GitHub is essentially a copy of your project's code<br> where you ca
   This sends our newly created branch "requiremnts" to GitHub.
 
   
-### Purpose of Creating a Branch:
+## Purpose of Creating a Branch:
  + ###### Isolated Development:
          can work on a new feature or bug fix without affecting the main codebase (usually the main or master branch).
  + ###### Collaboration: 
@@ -148,7 +148,7 @@ A branch in GitHub is essentially a copy of your project's code<br> where you ca
          This allows other team members to review the code before it's merged.
 
    
-### Creating a Pull Request (PR) in GitHub
+# Creating a Pull Request (PR) in GitHub
 #### Steps to Create a Pull Request:
 ##### 1. Go to your GitHub repository
         Visit the repository in your browser.
@@ -167,7 +167,7 @@ A branch in GitHub is essentially a copy of your project's code<br> where you ca
     After  creation of pull request we have to merge pull request
 
     
-### Merging a Pull Request (PR) in GitHub
+# Merging a Pull Request (PR) in GitHub
          Once your Pull Request (PR) is created and reviewed, the final step is to merge it into the main branch
 #### Steps to Merge a PR:
 ##### 1.Review the PR
