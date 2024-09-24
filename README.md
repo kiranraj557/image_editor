@@ -180,7 +180,9 @@ A branch in GitHub is essentially a copy of your project's code<br> where you ca
 ##### 3.Confirm the Merge  
         After clicking "Merge Pull Request", confirm the action by clicking the "Confirm Merge" button.
 ##### 4.Delete the branch 
-        Delete the branch 
+        After merging, you’ll get an option to delete the branch. Deleting the branch is optional
+        but recommended if the feature or bug fix is complete, to keep the repository clean.
+
          
    
 
