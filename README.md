@@ -10,11 +10,13 @@ it is a image editor done using streamlit in python
 
 
 #### 1.Setting Up Your Environment:
-- Create a Python file named image_editor.py
+- Create a Python file named **image_editor.py** in vscode
 
-Install the library(vscode terminal),if it's not already installed using:
+Install the library,if it's not already installed using:(enter these in vscode terminal)
  - pip install streamlit
  - pip install pillow
+
+# code explanation
 
 #### 2.Importing Libraries:
 ```python
