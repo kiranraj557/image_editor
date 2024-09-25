@@ -11,10 +11,37 @@ it is a image editor done using streamlit in python
 
 #### 1.Setting Up Your Environment:
 - Create a Python file named **image_editor.py** in vscode
+#### How to clone  Git Repository
+ - Open your project git repository  (https://github.com/kiranraj557/image_editor/tree/main)
+ - Click on code and copy the Project URL
+ - Open new window in VS Code
+ - Click the Clone git repository
+ - Paste the URL on repository source and press enter
+ - Navigate to the folder path and click on select as repository destination
+ - Open the clone repository in vs code
+
+ #### How to Create Virtual Environment
+ - Open terminal and run below commands
+    - python -m venv .venv 
+    - .venv\Scripts\activate  
+    - pip install streamlit 
+    - pip list
+    - streamlit run image_editor.py
+    - git pull
+    - git checkout -b "update_readme"
+    - git status
+
+#### How to install required libraries
 
 Install the library,if it's not already installed using:(enter these in vscode terminal)
  - pip install streamlit
  - pip install pillow
+
+
+#### How to run
+- To run the code enter **streamlit run image_editor.py** in the terminal
+- This will display the web app on your screen 
+
 
 # code explanation
 
