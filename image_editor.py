@@ -1,6 +1,7 @@
 import streamlit as st 
 from PIL import Image
 from PIL.ImageFilter import *
+import io
 
 st.markdown("<h1 style='text-align: center;'>Image Editor</h1>",unsafe_allow_html=True)
 st.markdown("---")
@@ -36,3 +37,9 @@ if image:
             else:
                 filtered=edited.filter(SMOOTH)        
         st.image(filtered)
+
+        buffer = io.BytesIO()
+        filtered.save(buffer, format="JPEG")
+        st.download_button(label="Download Edited Image", data=buffer.getvalue(), file_name="edited_image.jpg", mime="image/jpeg")
+
+

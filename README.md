@@ -50,6 +50,7 @@ Install the library,if it's not already installed using:(enter these in vscode t
 import streamlit as st 
 from PIL import Image
 from PIL.ImageFilter import *
+import io
 ```
 
 #### 3.Creating the Streamlit App:
@@ -135,10 +136,18 @@ Checked the selected filter and applied it:
                 filtered=edited.filter(SMOOTH)
 ```                  
 
-#### 13.Displaying the Final Image:
-Finally displayed the edited or filtered image using:
+#### 13.Displaying the edited Image:
+ displayed the edited or filtered image using:
 ```python
         st.image(filtered)
+```        
+
+#### 14.Download edited image:
+after displaying the edited image you can download using Download button
+```python
+        buffer = io.BytesIO()
+        filtered.save(buffer, format="JPEG")
+        st.download_button(label="Download Edited Image", data=buffer.getvalue(), file_name="edited_image.jpg", mime="image/jpeg")
 ```        
 
 
@@ -165,7 +174,9 @@ Finally displayed the edited or filtered image using:
 *screen4:* **To apply filter select any one of the options present or select None**
 <br>
 
-**click on submit button to see the edited image**
+**click on submit button to see the edited image**<br>
+
+**click on Download Edited Image button to download** 
 
  
 
@@ -232,9 +243,3 @@ A branch in GitHub is essentially a copy of your project's code<br> where you ca
         but recommended if the feature or bug fix is complete, to keep the repository clean.
 
          
-   
-
-
-
-
-
