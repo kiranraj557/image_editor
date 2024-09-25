@@ -146,6 +146,19 @@ Finally displayed the edited or filtered image using:
  To run the code enter **streamlit run image_editor.py** in the terminal
  this will display the web app on your screen 
 
+ ![image editor file uplode screen](/screenshot/Screenshot%20(40).png)
+ *screen1:* **Click on Browse files to upload image**
+
+  ![ uploded image info](/screenshot/Screenshot%20(41).png)
+ *screen2:* **Information about uploded image**
+
+  ![resizing, rotation, ](/screenshot/Screenshot%20(42).png)
+ *screen3:* ** Adjust the value according to your choice to resize and rotate uploded image**
+
+  ![select filters](/screenshot/Screenshot%20(43).png)
+ *screen1:* ** To apply filter select any one of the options present 
+                or select None  **
+   **click on submit to see the edited image**
 
  
 
