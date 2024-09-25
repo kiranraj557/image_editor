@@ -75,6 +75,7 @@ if img:
 
     # Process and display the final edited image
     if s_btn:
+
         edited = img.resize((width, height)).rotate(degree)
         filtered = edited
 
