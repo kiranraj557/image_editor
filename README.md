@@ -147,22 +147,22 @@ Finally displayed the edited or filtered image using:
  this will display the web app on your screen 
 
  ![image editor file uplode screen](/screenshot/Screenshot%20(1).png)
- *screen1:* **Click on Browse files to upload image**
+*screen1:* **Click on Browse files to upload image**
 
 
 
   ![ uploded image info](/screenshot/Screenshot%20(2).png)
- *screen2:* **Information about uploded image**
+*screen2:* **Information about uploded image**
 
 
 
   ![resizing, rotation, ](/screenshot/Screenshot%20(3).png)
- *screen3:* **Adjust the value according to your choice to resize and rotate uploded image**
+*screen3:* **Adjust the value according to your choice to resize and rotate uploded image**
 
- 
+
 
   ![select filters](/screenshot/Screenshot%20(4).png)
- *screen4:* **To apply filter select any one of the options present or select None**
+*screen4:* **To apply filter select any one of the options present or select None**
 
 **click on submit button to see the edited image**
 
