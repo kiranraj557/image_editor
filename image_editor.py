@@ -3,6 +3,7 @@ from PIL import Image
 from PIL.ImageFilter import *
 import requests
 from io import BytesIO
+import io
 
 # Page Title
 st.markdown(
@@ -34,7 +35,7 @@ with st.sidebar:
             try:
                 response = requests.get(url)
                 img = Image.open(BytesIO(response.content))
-                st.image(img, caption="Image from URL", use_column_width=True)
+                st.image(img, caption="Image from URL", use_container_width=True)
             except:
                 st.error("Invalid URL or unable to load image")
 
@@ -71,7 +72,7 @@ if img:
     with col2:
         # Show the image before editing
         st.markdown("<h2 style='color: #4CAF50;'>🖼️ Original Image</h2>", unsafe_allow_html=True)
-        st.image(img, caption="Original Image", use_column_width=True)
+        st.image(img, caption="Original Image", use_container_width=True)
 
     # Process and display the final edited image
     if s_btn:
@@ -91,8 +92,22 @@ if img:
 
         # Show the edited image
         st.markdown("<h2 style='color: #4CAF50;'>✨ Edited Image</h2>", unsafe_allow_html=True)
-        st.image(filtered, caption="Edited Image", use_column_width=True)
+        st.image(filtered, caption="Edited Image", use_container_width=True)
 
+        # Create a download button for the edited image
+        # Save the edited image to a BytesIO object for download
+        buffered = io.BytesIO()
+        filtered.save(buffered, format="PNG")
+        buffered.seek(0)
+
+        # Provide the download button
+        st.download_button(
+            label="Download Edited Image",
+            data=buffered,
+            file_name="edited_image.png",
+            mime="image/png"
+        )
 # Footer
 st.markdown("<hr style='border: 1px solid #4CAF50;'>", unsafe_allow_html=True)
+
 
