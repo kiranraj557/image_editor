@@ -41,145 +41,7 @@ Install the library,if it's not already installed using:(enter these in vscode t
 #### How to run
 - To run the code enter **streamlit run image_editor.py** in the terminal
 - This will display the web app on your screen 
-
-
-# code explanation
-
-#### 2.Importing Libraries:
-```python
-import streamlit as st 
-from PIL import Image
-from PIL.ImageFilter import *
-import io
-```
-
-#### 3.Creating the Streamlit App:
-Set up the title of your application:
-```python
-st.markdown("<h1 style='text-align: center;'>Image Editor</h1>",unsafe_allow_html=True)
-st.markdown("---") # Horizontal line
-```
-
-#### 4.File Uploader:
-Add a file uploader to allow users to upload images:
-```python
-image=st.file_uploader("upload Image",type=["jpg","png","jpeg"])
-```
-
-#### 5.Displaying Image Properties:
-Create placeholders for image properties (mode, size, format):
-```python
-info=st.empty()
-size=st.empty()
-mode=st.empty()
-format_=st.empty()
-```
-
-#### 6.Processing the Uploaded Image:
-Open the uploaded image using Pillow:
-```python
-if image:
-    img = Image.open(image) # Display the image
-    info.markdown("<h2 style='text-align:left;'>Information</h2>",unsafe_allow_html=True)
-    size.markdown(f"<h6>size: {img.size} </h6>",unsafe_allow_html=True)
-    mode.markdown(f"<h6>mode: {img.mode} </h6>",unsafe_allow_html=True)
-    format_.markdown(f"<h6>format: {img.format} </h6>",unsafe_allow_html=True)
-```
-
-#### 7.Adding Resizing Functionality:
-Created a heading for resizing:
-```python
-st.markdown("<h2 style='text-align:left;'>Resizing</h2>",unsafe_allow_html=True)
-    width=st.number_input("width",value=img.width)
-    height=st.number_input("height",value=img.height)
-```    
-
-#### 8.Adding Rotation Functionality:
-Introduced a heading for rotation and added a number input for the degree of rotation:
-```python
-    st.markdown("<h2 style='text-align:left;'>Rotation</h2>",unsafe_allow_html=True)
-    degree=st.number_input("degree",)
-```
-
-#### 9.Adding Filters:
-Created a section for filters using a select box with options like "None", "Blur", "Detail", "Emboss", and "Smooth":
-```python
-    st.markdown("<h2 style='text-align:left;'>Filters</h2>",unsafe_allow_html=True)
-    filters = st.selectbox("Filters", options=("None","Blur","Detail","Emboss","Smooth"))
-```
-
-#### 10.Submit Button:
-Introduced a submit button to trigger image processing:
-```python
-    s_btn=st.button("submit")
-```    
-
-#### 11.Resizing and Rotating:
-When the submit button is clicked, the application resizes and rotates the image based on user input:
-```python
-    if s_btn:
-        edited=img.resize((width,height)).rotate(degree)
-        filtered=edited
-```        
-
-#### 12.Applying Filters:
-Checked the selected filter and applied it:
-```python
-        if filters != "None":
-            if filters == "Blur":
-                filtered=edited.filter(BLUR)
-            elif filters == "Detail":
-                filtered=edited.filter(DETAIL)
-            elif filters == "Emboss":
-                filtered=edited.filter(EMBOSS)
-            else:
-                filtered=edited.filter(SMOOTH)
-```                  
-
-#### 13.Displaying the edited Image:
- displayed the edited or filtered image using:
-```python
-        st.image(filtered)
-```        
-
-#### 14.Download edited image:
-after displaying the edited image you can download using Download button
-```python
-        buffer = io.BytesIO()
-        filtered.save(buffer, format="JPEG")
-        st.download_button(label="Download Edited Image", data=buffer.getvalue(), file_name="edited_image.jpg", mime="image/jpeg")
-```        
-
-
-## output
- To run the code enter **streamlit run image_editor.py** in the terminal
- this will display the web app on your screen 
-
- ![image editor file uplode screen](/screenshot/Screenshot%20(1).png)<br>
-*screen1:* **Click on Browse files to upload image**
-<br>
-
-
-  ![ uploded image info](/screenshot/Screenshot%20(2).png)<br>
-*screen2:* **Information about uploded image**
-<br>
-
-
-  ![resizing, rotation, ](/screenshot/Screenshot%20(3).png)<br>
-*screen3:* **Adjust the value according to your choice to resize and rotate uploded image**
-<br>
-
-
-  ![select filters](/screenshot/Screenshot%20(4).png)<br>
-*screen4:* **To apply filter select any one of the options present or select None**
-<br>
-
-**click on submit button to see the edited image**<br>
-
-**click on Download Edited Image button to download** 
-
  
-
 # Creating a Branch
 A branch in GitHub is essentially a copy of your project's code<br> where you can make changes without affecting the main (or primary) codebase.
 #### Steps to Create a Branch:
@@ -242,4 +104,30 @@ A branch in GitHub is essentially a copy of your project's code<br> where you ca
         After merging, you’ll get an option to delete the branch. Deleting the branch is optional
         but recommended if the feature or bug fix is complete, to keep the repository clean.
 
-         
+--- 
+
+# steps to use the web 
+
+1. **Open the Web App:** After running the command, Streamlit will automatically open the app in your default web browser. If it doesn't, you can access it by navigating to http://localhost:8501.
+
+2. **Upload an Image:**
+- Select whether to upload an image file from your computer or provide a URL for an image.
+- For "Upload File", use the file uploader to select an image from your local system.
+- For "Enter Image URL", paste the URL of the image you want to use.
+
+3. **Edit the Image:**
+- Use the options on the sidebar to:
+   - Resize the image by adjusting the width and height.
+   - Rotate the image by selecting the desired degrees.
+   - Apply a filter (Blur, Detail, Emboss, or Smooth).
+
+4. **Apply Changes:** Click the "Apply Changes" button to apply the selected adjustments to the image.
+
+5. **Download the Edited Image:** After the changes are applied, a preview of the edited image will appear. You can download the edited image by clicking the "Download Edited Image" button.
+
+---
+# output images
+
+![Uplode Image](screenshot/Screenshot%20(1).png)
+![Edit Image](screenshot/Screenshot%20(2).png)
+![Apply Changes(Download Image)](screenshot/Screenshot%20(3).png)
